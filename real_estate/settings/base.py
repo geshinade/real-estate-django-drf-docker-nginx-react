@@ -36,9 +36,8 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "apps.common",
-	"apps.users",
-	"apps.profiles",
-	"apps.ratings",
+    "apps.users",
+    "apps.profiles",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -149,6 +148,8 @@ MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = str(ROOT_DIR / "mediafiles")
 
 CORS_URLS_REGEX = r"^/api/.*$"
+
+AUTH_USER_MODEL = "users.User"
 
 LOGGING = {
     "version": 1,
