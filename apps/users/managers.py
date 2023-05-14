@@ -1,9 +1,8 @@
-from django.test import TestCase
-
 # Create your tests here.
 from django.contrib.auth.base_user import BaseUserManager
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
+from django.test import TestCase
 from django.utils.translation import gettext_lazy as _
 
 

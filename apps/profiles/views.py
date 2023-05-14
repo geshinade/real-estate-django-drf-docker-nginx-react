@@ -33,7 +33,7 @@ class TopAgentsListAPIView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
     queryset = Profile.objects.filter(top_agent=True)
     serializer_class = ProfileSerializer
-    renderer_classes = (ProfilesJSONRenderer)
+    renderer_classes = ProfilesJSONRenderer
     pagination_class = ProfilePagination
 
 

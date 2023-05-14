@@ -20,10 +20,10 @@ makemigrations:
 	docker compose -f local.yml run --rm api python manage.py makemigrations
 
 test:
-	pytest -p no-warnings --cov=. -v
+	pytest -p no:warnings --cov=. -v
 			
 test-html:
-	pytest -p no-warnings --cov=. --cov-report html -v
+	pytest -p no:warnings --cov=. --cov-report html -v
 
 collectstatic:
 	docker compose -f local.yml run --rm api python manage.py collectstatic --no-input --clear
