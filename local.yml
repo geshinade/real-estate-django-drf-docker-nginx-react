@@ -22,6 +22,17 @@ services:
         networks:
             - real-estate-live
 
+    client:
+        build:
+            context: ./client
+            dockerfile: ./docker/local/Dockerfile
+        restart: on-failure
+        volumes:
+            - ./client:/app
+            - /app/node_modules
+        networks:
+            - real-estate-live
+
     postgres:
         build:
             context: .
