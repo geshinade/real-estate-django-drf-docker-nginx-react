@@ -10,7 +10,7 @@ from .serializers import ProfileSerializer, UpdateProfileSerializer
 
 
 class AgentListAPIView(generics.ListAPIView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
     queryset = Profile.objects.filter(is_agent=True)
     serializer_class = ProfileSerializer
     renderer_classes = (ProfilesJSONRenderer,)
@@ -30,7 +30,7 @@ class AgentListAPIView(generics.ListAPIView):
 
 
 class TopAgentsListAPIView(generics.ListAPIView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
     queryset = Profile.objects.filter(top_agent=True)
     serializer_class = ProfileSerializer
     renderer_classes = ProfilesJSONRenderer
